@@ -3,11 +3,11 @@ class Team < ApplicationRecord
 
   validates :name, length: { minimum: 1 }, uniqueness: true
 
-  before_save do
-    self.name = name.strip
+  def name=(val)
+    self.name = val.strip
   end
-  before_validation do
-    self.name = name.strip
+  def employees=(val)
+    self.employees = val.uniq{|x| x.id}
   end
 
   def to_s

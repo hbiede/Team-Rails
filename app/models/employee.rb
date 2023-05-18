@@ -3,11 +3,11 @@ class Employee < ApplicationRecord
 
   validates :name, presence: true
 
-  before_save do
-    self.name = name.strip
+  def name=(val)
+    self.name = val.strip
   end
-  before_validation do
-    self.name = name.strip
+  def teams=(val)
+    self.teams = val.uniq{|x| x.id}
   end
 
   def to_s
