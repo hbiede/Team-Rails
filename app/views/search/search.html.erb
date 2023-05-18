@@ -1,0 +1,21 @@
+<% if @employees.any? %>
+  <h2>Employees</h2>
+  <ul>
+    <% @employees.each do |emp| %>
+      <li>
+        <%= link_to emp %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @teams.any? %>
+  <h2>Teams</h2>
+  <ul>
+    <% @teams.each do |team| %>
+      <li>
+        <%= link_to team %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

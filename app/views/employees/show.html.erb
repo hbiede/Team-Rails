@@ -1,0 +1,18 @@
+<div class="card">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><%= link_to "Employees", employees_path %></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @employee.name %></li>
+    </ol>
+  </nav>
+</div>
+
+<% #TODO: Allow editing %>
+<h2>Teams</h2>
+<ul>
+  <% @employee.teams.each do |team| %>
+    <li>
+      <%= link_to team %>
+    </li>
+  <% end %>
+</ul>
